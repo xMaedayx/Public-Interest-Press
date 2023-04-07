@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -14,11 +15,12 @@ Tips.init(
             autoIncrement: true,
         },
         title: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(255),
             allowNull: false,
         },
         content: {
-            type: DataTypes.STRING(100000),
+            // type: DataTypes.STRING(1000)
+            type: Sequelize.TEXT,
             allowNull: false,
         },
         author_id: {
