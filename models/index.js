@@ -1,9 +1,11 @@
+const { Sequelize } = require('sequelize');
 const User = require('./User');
 const Article = require('./Article');
 const Tips = require('./Tips');
 
-User.hasMany(User, {
-    foreignKey: "author_id"
+User.hasMany(Article, {
+    foreignKey: "author_id",
+    onDelete: "CASCADE"
 });
 
 User.hasMany(Tips, {
@@ -13,7 +15,7 @@ User.hasMany(Tips, {
 });
 
 Article.belongsTo(User, {
-    foriegnKey: "author_id"
+    foriegnKey: "author_id",
 
 });
 
