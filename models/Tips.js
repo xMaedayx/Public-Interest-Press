@@ -19,7 +19,6 @@ Tips.init(
             allowNull: false,
         },
         content: {
-            // type: DataTypes.STRING(1000)
             type: Sequelize.TEXT,
             allowNull: false,
         },
