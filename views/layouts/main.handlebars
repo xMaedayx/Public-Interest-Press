@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Public Intrest Press</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  </head>
+  <body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Public Intrest Press</li>
+          {{#if logged_in}}
+          <li><a href="" id="logout">Logout</a></li>
+          <li><a href="/profile.handlebars" id="profile">Profile</a></li>
+          {{else}}
+          <li><a href="/login.handlebars" id="login">Login</a></li>
+          <li><a href="/tips.handlebars" id="tips">Tips</a></li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <main>
+        {{{ body }}} 
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
+
+
+
