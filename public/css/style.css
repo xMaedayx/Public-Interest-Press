@@ -1,8 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+}
 
 .log-in-form {
-    border: 1px solid #cacaca;
-    padding: 1rem;
-    border-radius: 0;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.log-in-form form {
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 0;
+}
+
+#show-password {
+  display: flex;
+  align-items: center;
+}
+
+.log-in-form input[type="checkbox"] {
+  margin-right: 10px;
+}
+
