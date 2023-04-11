@@ -1,13 +1,10 @@
-
-<div class="blog-post">
-        <h3>{{tips.name}}<small></small></h3>
-        
-        <p>{{tips.content}}</p>
-        <div class="callout">
-          <ul class="menu simple">
-            <li><a href="#">Author: {{user.name}}</a></li>
-            <li><a href="#">Comments: {{user.content}}</a></li>
-         
-          </ul>
-        </div>
-</div>
+  <main>
+    <div class="row">
+      {{#each tips as |tips| }}
+      <div class="medium-8 large-7 columns">
+        <a href="/article/{{tips.id}}">{{tips.title}}</a>
+        <p>{{content}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </main>
