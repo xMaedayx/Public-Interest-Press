@@ -18,7 +18,7 @@ Articles.init(
             allowNull: false,
         },
         content: {
-            type: DataTypes.STRING(100000),
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         author_id: {
@@ -34,7 +34,7 @@ Articles.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: "tips",
+        modelName: "article",
     }
 );
 
