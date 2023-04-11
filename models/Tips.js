@@ -22,7 +22,7 @@ Tips.init(
             type: Sequelize.TEXT,
             allowNull: false,
         },
-        author_id: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
