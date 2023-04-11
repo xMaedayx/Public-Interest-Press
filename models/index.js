@@ -4,23 +4,23 @@ const Article = require('./Article');
 const Tips = require('./Tips');
 
 User.hasMany(Article, {
-    foreignKey: "author_id",
+    foreignKey: "user_id",
     onDelete: "CASCADE"
 });
 
 User.hasMany(Tips, {
-   foreignKey: "author_id",
+   foreignKey: "user_id",
    onDelete: "CASCADE"
  
 });
 
 Article.belongsTo(User, {
-    foriegnKey: "author_id",
+    foriegnKey: "user_id",
 
 });
 
 Tips.belongsTo(User, {
-    foreignKey: "author_id"
+    foreignKey: "user_id"
 
 });
 
