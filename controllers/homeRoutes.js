@@ -7,8 +7,8 @@ router.get('/', async (req, res) => {
     const articleData = await Article.findAll({
       include: [
         {
-          model: Article,
-          attributes: ['content'],
+          model: User,
+          attributes: ['name'],
         },
       ],
     });
@@ -18,11 +18,37 @@ router.get('/', async (req, res) => {
     // Pass serialized data and session flag into template
     res.render('homepage', { 
       articles, 
+      
       // logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
   };
+});
+
+
+router.get('/tips', async (req, res) => {
+  try {
+    const tipsData = await tips.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        }
+      ]
+    })
+    const tips = tipsData.map((tip) => tip.get({ plain: true }));
+
+    res.render('tips', {
+      tips,
+      
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
+   
 });
 
 router.get('/article/:id', async (req, res) => {
@@ -31,7 +57,7 @@ router.get('/article/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['content'],
+          attributes: ['name'],
         },
       ],
     });

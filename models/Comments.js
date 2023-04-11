@@ -18,7 +18,7 @@ Comments.init(
             allowNull: false,
         },
         content: {
-            type: DataTypes.STRING(100000),
+            type: DataTypes.STRING(255),
             allowNull: false,
         },
         author_id: {
