@@ -34,7 +34,7 @@ Comments.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: "tips",
+        modelName: "comments",
     }
 );
 
