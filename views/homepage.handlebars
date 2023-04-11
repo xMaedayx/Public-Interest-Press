@@ -1,14 +1,28 @@
-{{#each articles as |article| }}
-
-<div class="row medium-8 large-7 columns">
-  <a href="/article/{{article.id}}">{{article.name}}</a>
-</div>
-
-{{/each}}
-
-
-
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Public Interest Press </title>
+</head>
+<body>
+  <header>
+    <h1>Opensource news you can investigate and learn to trust!</h1>
+  </header>
+  
+  <main>
+    <div class="row">
+      {{#each articles as |article| }}
+      <div class="medium-8 large-7 columns">
+        <a href="/article/{{article.id}}">{{article.name}}</a>
+      </div>
+      {{/each}}
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Joey Meghan Uriah Kameron</p> 
+  </footer>
+</body>
+</html>
 
 
 
