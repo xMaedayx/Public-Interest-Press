@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Article, User } = require('../models');
+const { Article, Tips, User } = require('../models');
 const withAuth = require('../utils/auth.js');
 
 router.get('/', async (req, res) => {
@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
 
 router.get('/tips', async (req, res) => {
   try {
-    const tipsData = await tips.findAll({
+    const tipsData = await Tips.findAll({
       include: [
         {
           model: User,
