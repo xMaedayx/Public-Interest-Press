@@ -66,7 +66,29 @@ router.get('/article/:id', async (req, res) => {
 
     res.render('article', {
       ...article,
-      // logged_in: req.session.logged_in
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/tips/:id', async (req, res) => {
+  try {
+    const tipsData = await Tips.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const tip = tipsData.get({ plain: true });
+
+    res.render('tip', {
+      ...tip,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
