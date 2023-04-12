@@ -99,3 +99,15 @@ body {
   justify-self: right;
 }
 
+
+.name {
+  margin: 0 auto; 
+  
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
