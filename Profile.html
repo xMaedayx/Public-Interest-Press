@@ -1,4 +1,4 @@
-<html lang="en">
+<!-- <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,32 @@
       </div>
     </div>
 </body>
-</html>
+</html> -->
+
+
+<link rel="stylesheet" href="/public/css/style.css">
+
+  <div class="card-box">
+    <div class="card-section">
+      <div class="card-info">
+        <h1 class="name">{{name}}</h1>
+        <p class="card-header"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-center align-middle">
+  <div class="medium-8 large-7 columns row align-center card-section">
+    {{#each articles as |article| }}
+    <div class="card">
+      <a href="/article/{{article.id}}">{{article.title}}</a>
+      <p>{{content}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>
+</div>
 
 
   
