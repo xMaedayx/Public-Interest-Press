@@ -1,3 +1,4 @@
+{{#if logged_in}}
 <div class="post-btn">
   <button class="btn">Create Post</button>
   <style>
@@ -17,6 +18,7 @@
     linear-gradient(to bottom, #3cb0fd, #3498db); text-decoration: none; }
   </style>
 </div>
+{{/if}}
 
 <div class="row">
   {{#each tips as |tips|}}
