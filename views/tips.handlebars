@@ -1,3 +1,4 @@
+{{#if logged_in}}
 <div class="post-btn">
   <button  id="pstBtn" class="btn">Create Post</button>
  
@@ -12,6 +13,9 @@
     <button id="save-post-btn">Save</button>
   </div>
 </div>
+
+</div>
+{{/if}}
 
 <div class="row">
   {{#each tips as |tips|}}
@@ -40,6 +44,8 @@
     -o-linear-gradient(top, #3cb0fd, #3498db); background-image:
     linear-gradient(to bottom, #3cb0fd, #3498db); text-decoration: none; }
   </style>
+
+
 
   <style>
     /* The Modal (background) */
