@@ -1,7 +1,7 @@
 {{#if logged_in}}
 <div class="post-btn">
   <button  id="pstBtn" class="btn">Create Post</button>
- 
+  
 </div>
 
 <div id="myModal" class="modal">
@@ -10,6 +10,8 @@
     <span class="close">&times;</span>
     <h2>New Post</h2>
     <textarea id="new-post-text" placeholder="Write your new post here..."></textarea>
+    <input type="file" id="file-input">
+    <button id="upload-button" class="upload">Upload</button>
     <button id="save-post-btn">Save</button>
   </div>
 </div>
