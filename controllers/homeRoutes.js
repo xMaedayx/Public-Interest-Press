@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', { 
       articles, 
       
-      // logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -41,7 +41,7 @@ router.get('/tips', async (req, res) => {
 
     res.render('tips', {
       tips,
-      
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
     console.log(err);
