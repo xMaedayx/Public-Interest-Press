@@ -1,13 +1,23 @@
-const newPostBtn = document.getElementById("pstBtn");
 const modal = document.getElementById("myModal1");
-const closeBtn = document.getElementsByClassName("close"[0]);
-const savePostBtn = document.getElementById("save-post-btn");
-const newPostText = document.getElementById("new-post-text");
+const btn = document.getElementById("pstBtn");
+const span = document.getElementsByClassName("clsos"[0]);
 
-newPostBtn.addEventListener("click", () => {
-    //  Show the modal when the button is clicked
+// When the user clicks the button, open the modal
+btn.onclick = function(){
     modal.style.display = "block";
-})
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function(){
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside the modal, close it
+window.onclick = function(event){
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 $('#upload-button').on('click', function() {
     var fileInput = $('#file-input')[0];

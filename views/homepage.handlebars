@@ -1,7 +1,18 @@
 {{#if logged_in}}
 <div class="post-btn">
   <button class="btn">Create Post</button>
-  <style>
+</div>
+{{/if}}
+<div class="row">
+  {{#each articles as |article|}}
+    <div class="medium-8 large-7 columns">
+      <a href="/article/{{article.id}}">{{article.title}}</a>
+      <p>{{content}}</p>
+    </div>
+  {{/each}}
+</div>
+
+<style>
     .btn { background: #3498db; background-image: -webkit-linear-gradient(top,
     #3498db, #2980b9); background-image: -moz-linear-gradient(top, #3498db,
     #2980b9); background-image: -ms-linear-gradient(top, #3498db, #2980b9);
@@ -17,13 +28,3 @@
     -o-linear-gradient(top, #3cb0fd, #3498db); background-image:
     linear-gradient(to bottom, #3cb0fd, #3498db); text-decoration: none; }
   </style>
-</div>
-{{/if}}
-<div class="row">
-  {{#each articles as |article|}}
-    <div class="medium-8 large-7 columns">
-      <a href="/article/{{article.id}}">{{article.title}}</a>
-      <p>{{content}}</p>
-    </div>
-  {{/each}}
-</div>
