@@ -6,10 +6,23 @@
 <button class="button" data-open="myModal1">Create Post</button>
 <div class="reveal" id="myModal1" data-reveal>
   <h1> Your New Post</h1>
+  <form>
+  <div class="grid-x grid-padding-x">
+    <div class="small-3 cell">
+      <label for="middle-label" class="text-right middle"></label>
+    </div>
+    <div class="small-9 cell">
+      <input type="text" id="middle-label" placeholder="Title">
+    </div>
+  </div>
+</form>
   <label>
   Enter here:
   <textarea placeholder="None"></textarea>
+  <label for="exampleFileUpload" class="button">Upload File</label>
+<input type="file" id="exampleFileUpload" class="show-for-sr">
 </label>
+<button class="submit success button">Submit</button>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -28,3 +41,4 @@
 
 
   <script src="/public/js/postBtn.js"></script>
+  
