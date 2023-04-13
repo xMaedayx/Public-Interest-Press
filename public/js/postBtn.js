@@ -1,16 +1,3 @@
-const button = document .querySelector('.btn');
-const modal = document.querySelector('.modal');
-
-button.onclick = () => {
-    // log that the button has been clicked 
-    console.log("button clicked");
-    // display the modal 
-    modal.style.display = "block";
-}
-
-
-
-
 $('#upload-button').on('click', function() {
     var fileInput = $('#file-input')[0];
     var file = fileInput.files[0];
