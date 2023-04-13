@@ -1,39 +1,42 @@
 {{#if logged_in}}
-{{!-- <div class="card-container position-absolute top-100 left-100 w-10 h-10">
+<div class="card-container position-absolute top-100 left-100 w-10 h-10">
 <button class="button" data-open="myModal1">Create Post</button>
 <div class="reveal" id="myModal1" data-reveal>
   <h1> Your New Post</h1>
-  <form>
+  <form id="new-article-form">
+    <input type="hidden" id="user_id" value="<%= user_id %>">
   <div class="grid-x grid-padding-x">
-    <div class="small-3 cell">
-      <label for="middle-label" class="text-right middle"></label>
-    </div>
+    {{!-- <div class="small-3 cell">
+      <label for="title" class="text-right middle"></label>
+    </div> --}}
     <div class="small-9 cell">
-      <input type="text" id="middle-label" placeholder="Title">
+      <input type="form-input" id="article-title" placeholder="Title" required>
     </div>
   </div>
-</form>
+
   <label>
   Enter here:
-  <textarea placeholder="None"></textarea>
-</label>
-<label for="exampleFileUpload" class="button" id="upload-button">Upload File</label>
-<input type="file" id="file-input" class="show-for-sr">
-</label>
-<button class="submit success button" >Submit</button>
+  <textarea type="form-input" id="article-content" placeholder="None" required></textarea>
+  <label for="fileUpload" class="button">Upload File</label>
+  <input type="file" id="fileUpload" class="show-for-sr">
+  </label>
+
+  <button id="submit" class="submit success button">Submit</button>
+</form>
   <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
-</div> --}}
-
-<a href="/newarticle" class="button">Create Post</a>
+</div>
+  <script src="/js/postBtn.js"></script>
+  <script src="/js/newArticle.js"></script>
+{{!-- <a href="/newarticle" class="button">Create Post</a> --}}
 
 {{/if}}
 <div class="row">
   {{#each articles as |article|}}
     <div class="medium-8 large-7 columns">
       <a href="/article/{{article.id}}">{{article.title}}</a>
-      <p>{{content}}</p>
+      <p>{{article.content}}</p>
     </div>
   {{/each}}
 </div>

@@ -6,8 +6,8 @@ const newFormHandler = async (event) => {
     event.preventDefault();
   
     
-    const title = document.querySelector('#title').value.trim();
-    const content = document.querySelector('#content').value.trim();
+    const title = document.querySelector('#tips-title').value.trim();
+    const content = document.querySelector('#tips-content').value.trim();
     const user_id = document.querySelector('#user_id').value.trim();
   
     if (title && content) {
