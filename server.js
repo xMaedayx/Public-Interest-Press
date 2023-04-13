@@ -8,8 +8,19 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Serve static files from the "public" directory
+app.use(express.static('public'));
+
+// Set up routes for your app
+// app.get('/', (req, res) => {
+//   res.send('Hello, world!');
+// });
+
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
@@ -30,7 +41,10 @@ const sess = {
 };
 
 app.use(session(sess));
-
+app.use((req, res, next) => {
+  res.locals.user_id = req.session.user_id; // assuming `user_id` is stored in the session
+  next();
+});
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

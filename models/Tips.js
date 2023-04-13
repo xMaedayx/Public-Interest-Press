@@ -15,16 +15,16 @@ Tips.init(
             autoIncrement: true,
         },
         title: {
-            type: DataTypes.STRING(255),
+            type: DataTypes.STRING,
             allowNull: false,
         },
         content: {
-            type: Sequelize.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            // allowNull: false,
             references: {
                 model: "user",
                 key: "id",

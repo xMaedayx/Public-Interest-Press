@@ -59,7 +59,32 @@ router.get('/newtip', async (req, res) => {
       include: [{ model: Tips }],
     });
 
+    const user = userData.get({ plain: true });
+
     res.render('newtip', {
+      ...user,
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
+   
+});
+
+
+router.get('/newarticle', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Article }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('newtip', {
+      ...user,
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -119,7 +144,7 @@ router.get('/tips/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.author_id, {
+    const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       // need to change the article model to article
       include: [{ model: Article }],
