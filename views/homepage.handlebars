@@ -32,9 +32,9 @@
 {{!-- <a href="/newarticle" class="button">Create Post</a> --}}
 
 {{/if}}
-<div class="row">
+<div class="text-center">
   {{#each articles as |article|}}
-    <div class="medium-8 large-7 columns">
+    <div class="medium-12 columns text-center">
       <a href="/article/{{article.id}}">{{article.title}}</a>
       <p>{{article.content}}</p>
     </div>
