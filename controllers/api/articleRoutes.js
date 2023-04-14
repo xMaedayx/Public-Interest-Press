@@ -2,10 +2,28 @@ const router = require('express').Router();
 const { Article } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+const multer = require('multer');
+
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // specify the folder where the uploaded file will be stored
+  },
+  filename: function (req, file, cb) {
+    const fileName = Date.now() + '-' + file.originalname; // generate a unique file name
+    cb(null, fileName);
+  }
+});
+
+const upload = multer({ storage: storage });
+
+router.post('/', upload.single('fileUpload'), async (req, res) => {
+  console.log(req.body);
   try {
     const newArticle = await Article.create({
-      ...req.body,
+      title: req.body["article-title"],
+      content: req.body["article-content"],
+      img: req.file.filename,
       user_id: req.session.user_id,
     });
 
