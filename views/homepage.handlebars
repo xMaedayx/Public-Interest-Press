@@ -10,15 +10,15 @@
       <label for="title" class="text-right middle"></label>
     </div> --}}
     <div class="small-9 cell">
-      <input type="form-input" id="article-title" placeholder="Title" required>
+      <input type="form-input" id="article-title" name="article-title" placeholder="Title" required>
     </div>
   </div>
 
   <label>
   Enter here:
-  <textarea type="form-input" id="article-content" placeholder="None" required></textarea>
+  <textarea type="form-input" name="article-content" id="article-content" placeholder="None" required></textarea>
   <label for="fileUpload" class="button">Upload File</label>
-  <input type="file" id="fileUpload" class="show-for-sr">
+  <input type="file" name="fileUpload" id="fileUpload" class="show-for-sr">
   </label>
 
   <button id="submit" class="submit success button">Submit</button>
